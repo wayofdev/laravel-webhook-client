@@ -58,6 +58,8 @@ jobs:
 
       - name: 🧪 Execute phpunit and pest tests
         run: composer test:cc
+        env:
+          XDEBUG_MODE: "coverage"
 
       - name: 🔍 Run static analysis using phpstan
         run: composer stan:ci
