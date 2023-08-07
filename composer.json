@@ -1,6 +1,6 @@
 {
-    "name": "wayofdev/laravel-package-tpl",
-    "description": "PHP package template with GitHub Actions",
+    "name": "wayofdev/laravel-webhook-client",
+    "description": "Handle Stripe webhooks in a Laravel application with support of Cycle-ORM.",
     "type": "library",
     "license": "MIT",
     "homepage": "https://wayof.dev",
@@ -15,8 +15,15 @@
         }
     ],
     "require": {
+        "ext-pdo": "*",
         "php": "^8.2",
-        "illuminate/contracts": "^v10.13"
+        "cycle/annotated": "^3.3",
+        "cycle/database": "^2.5",
+        "cycle/entity-behavior": "^1.2",
+        "cycle/orm": "^2.3",
+        "laravel/framework": "^v10.13",
+        "symfony/http-foundation": "^6.3",
+        "wayofdev/laravel-cycle-orm-adapter": "^4.0"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.31",
@@ -35,13 +42,13 @@
     },
     "autoload": {
         "psr-4": {
-            "WayOfDev\\Package\\": "src/"
+            "WayOfDev\\WebhookClient\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "WayOfDev\\Package\\App\\": "tests/app/",
-            "WayOfDev\\Package\\Tests\\": "tests/src/"
+            "WayOfDev\\WebhookClient\\App\\": "tests/app/",
+            "WayOfDev\\WebhookClient\\Tests\\": "tests/src/"
         }
     },
     "scripts": {
@@ -63,7 +70,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "WayOfDev\\Package\\Bridge\\Laravel\\Providers\\PackageServiceProvider"
+                "WayOfDev\\WebhookClient\\Bridge\\Laravel\\Providers\\WebhookClientServiceProvider"
             ]
         },
         "composer-normalize": {
