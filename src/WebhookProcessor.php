@@ -16,7 +16,7 @@ class WebhookProcessor
 {
     public function __construct(
         protected Request $request,
-        protected WebhookConfig $config,
+        protected Config $config,
         protected WebhookCallRepository $repository
     ) {
     }

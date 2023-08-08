@@ -10,10 +10,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Throwable;
 use WayOfDev\Cycle\Repository;
+use WayOfDev\WebhookClient\Config;
 use WayOfDev\WebhookClient\Contracts\WebhookCallRepository;
+use WayOfDev\WebhookClient\Entities\Exception as ExceptionTypecast;
+use WayOfDev\WebhookClient\Entities\Headers;
+use WayOfDev\WebhookClient\Entities\Payload;
 use WayOfDev\WebhookClient\Entities\WebhookCall;
 use WayOfDev\WebhookClient\Exceptions\InvalidConfig;
-use WayOfDev\WebhookClient\WebhookConfig;
 
 use function array_map;
 use function in_array;
@@ -35,16 +38,16 @@ final class ORMWebhookCallRepository extends Repository implements WebhookCallRe
     /**
      * @throws Throwable
      */
-    public function store(WebhookConfig $config, Request $request): WebhookCall
+    public function store(Config $config, Request $request): WebhookCall
     {
         $headers = $this->headersToStore($config, $request);
 
         $entity = new WebhookCall(
             name: $config->name,
             url: $request->fullUrl(),
-            headers: $headers,
-            payload: $request->input(),
-            exception: [],
+            headers: Headers::fromArray($headers),
+            payload: Payload::fromArray($request->input()),
+            exception: ExceptionTypecast::fromArray([]),
             createdAt: new DateTimeImmutable(),
         );
 
@@ -58,7 +61,13 @@ final class ORMWebhookCallRepository extends Repository implements WebhookCallRe
      */
     public function storeException(WebhookCall $webhookCall, Exception $exception): void
     {
-        $webhookCall->setException($exception);
+        $webhookCall->setException(ExceptionTypecast::fromArray([
+            'message' => $exception->getMessage(),
+            'code' => $exception->getCode(),
+            'file' => $exception->getFile(),
+            'line' => $exception->getLine(),
+            'trace' => $exception->getTraceAsString(),
+        ]));
 
         $this->persist($webhookCall);
     }
@@ -89,7 +98,7 @@ final class ORMWebhookCallRepository extends Repository implements WebhookCallRe
             ->fetchAll());
     }
 
-    private function headersToStore(WebhookConfig $config, Request $request): array
+    private function headersToStore(Config $config, Request $request): array
     {
         $headerNamesToStore = $config->storeHeaders;
 

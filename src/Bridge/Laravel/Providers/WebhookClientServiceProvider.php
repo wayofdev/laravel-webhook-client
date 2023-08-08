@@ -6,15 +6,16 @@ namespace WayOfDev\WebhookClient\Bridge\Laravel\Providers;
 
 use Cycle\ORM\ORMInterface;
 use Cycle\ORM\Select;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use WayOfDev\WebhookClient\Bridge\Laravel\Http\Controllers\WebhookController;
+use WayOfDev\WebhookClient\Config;
+use WayOfDev\WebhookClient\ConfigRepository;
 use WayOfDev\WebhookClient\Contracts\WebhookCallRepository;
 use WayOfDev\WebhookClient\Exceptions\InvalidConfig;
 use WayOfDev\WebhookClient\Persistence\ORMWebhookCallRepository;
-use WayOfDev\WebhookClient\WebhookConfig;
-use WayOfDev\WebhookClient\WebhookConfigRepository;
 
 use function is_null;
 
@@ -37,22 +38,24 @@ final class WebhookClientServiceProvider extends ServiceProvider
             return Route::post($url, WebhookController::class)->name("webhook-client-{$name}");
         });
 
-        $this->app->scoped(WebhookConfigRepository::class, function () {
-            $configRepository = new WebhookConfigRepository();
+        $this->app->scoped(ConfigRepository::class, function () {
+            $configRepository = new ConfigRepository();
 
-            collect(config('webhook-client.configs'))
-                ->map(fn (array $config) => new WebhookConfig($config))
-                ->each(fn (WebhookConfig $webhookConfig) => $configRepository->addConfig($webhookConfig));
+            $configs = config('webhook-client.configs');
+
+            (new Collection($configs))
+                ->map(fn (array $config) => new Config($config))
+                ->each(fn (Config $webhookConfig) => $configRepository->addConfig($webhookConfig));
 
             return $configRepository;
         });
 
-        $this->app->bind(WebhookConfig::class, function () {
+        $this->app->bind(Config::class, function () {
             $routeName = Route::currentRouteName() ?? '';
 
             $configName = Str::after($routeName, 'webhook-client-');
 
-            $webhookConfig = app(WebhookConfigRepository::class)->getConfig($configName);
+            $webhookConfig = app(ConfigRepository::class)->getConfig($configName);
 
             if (is_null($webhookConfig)) {
                 throw InvalidConfig::couldNotFindConfig($configName);

@@ -11,18 +11,24 @@ use Stringable;
 use function json_decode;
 use function json_encode;
 
-readonly class AsJson implements Stringable
+/**
+ * @phpstan-consistent-constructor
+ */
+abstract class AsJson implements Stringable
 {
+    public static function fromArray(array $value): static
+    {
+        return new static($value);
+    }
+
     /**
      * @throws JsonException
      */
-    public static function castValue(mixed $value, DatabaseInterface $db): array
+    public static function castValue(mixed $value, DatabaseInterface $db): static
     {
-        if (null === $value) {
-            return [];
-        }
-
-        return json_decode((string) $value, true, 512, JSON_THROW_ON_ERROR);
+        return static::fromArray(
+            json_decode($value, true, 512, JSON_THROW_ON_ERROR)
+        );
     }
 
     /**
@@ -41,8 +47,13 @@ readonly class AsJson implements Stringable
         return json_encode($this->value, JSON_THROW_ON_ERROR);
     }
 
-    private function __construct(
-        private array $value
+    public function toArray(): array
+    {
+        return $this->value;
+    }
+
+    protected function __construct(
+        protected readonly array $value
     ) {
     }
 }

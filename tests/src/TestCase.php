@@ -24,7 +24,7 @@ abstract class TestCase extends Orchestra
     {
         parent::setUp();
 
-        $this->migrationsPath = __DIR__ . '/../app/database/migrations/cycle';
+        $this->migrationsPath = __DIR__ . '/../database/migrations/cycle';
         $this->cleanupMigrations($this->migrationsPath . '/*.php');
         $this->refreshDatabase();
 
@@ -32,7 +32,8 @@ abstract class TestCase extends Orchestra
             config()->set([
                 'cycle.tokenizer.directories' => array_merge(
                     config('cycle.tokenizer.directories'),
-                    [__DIR__ . '/../../src/Entities']
+                    [__DIR__ . '/../../src/Entities'],
+                    [__DIR__ . '/TestClasses/Entities'],
                 ),
                 'cycle.migrations.directory' => $this->migrationsPath,
             ]);

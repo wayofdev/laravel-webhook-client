@@ -6,11 +6,12 @@ namespace WayOfDev\WebhookClient\Response;
 
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use WayOfDev\WebhookClient\WebhookConfig;
+use WayOfDev\WebhookClient\Config;
+use WayOfDev\WebhookClient\Contracts\RespondsToWebhook;
 
 class DefaultRespondsTo implements RespondsToWebhook
 {
-    public function respondToValidWebhook(Request $request, WebhookConfig $config): Response
+    public function respondToValidWebhook(Request $request, Config $config): Response
     {
         return response()->json(['message' => 'ok']);
     }

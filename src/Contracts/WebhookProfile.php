@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WayOfDev\WebhookClient\Profile;
+namespace WayOfDev\WebhookClient\Contracts;
 
 use Illuminate\Http\Request;
 

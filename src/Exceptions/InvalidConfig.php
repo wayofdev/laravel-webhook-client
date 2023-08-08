@@ -6,9 +6,9 @@ namespace WayOfDev\WebhookClient\Exceptions;
 
 use Exception;
 use WayOfDev\WebhookClient\Bridge\Laravel\Jobs\ProcessWebhookJob;
-use WayOfDev\WebhookClient\Profile\WebhookProfile;
-use WayOfDev\WebhookClient\Response\RespondsToWebhook;
-use WayOfDev\WebhookClient\SignatureValidator\SignatureValidator;
+use WayOfDev\WebhookClient\Contracts\RespondsToWebhook;
+use WayOfDev\WebhookClient\Contracts\SignatureValidator;
+use WayOfDev\WebhookClient\Contracts\WebhookProfile;
 
 final class InvalidConfig extends Exception
 {
