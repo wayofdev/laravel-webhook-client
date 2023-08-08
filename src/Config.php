@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace WayOfDev\WebhookClient;
 
 use WayOfDev\WebhookClient\Bridge\Laravel\Jobs\ProcessWebhookJob;
+use WayOfDev\WebhookClient\Contracts\RespondsToWebhook;
+use WayOfDev\WebhookClient\Contracts\SignatureValidator;
+use WayOfDev\WebhookClient\Contracts\WebhookProfile;
 use WayOfDev\WebhookClient\Exceptions\InvalidConfig;
-use WayOfDev\WebhookClient\Profile\WebhookProfile;
 use WayOfDev\WebhookClient\Response\DefaultRespondsTo;
-use WayOfDev\WebhookClient\Response\RespondsToWebhook;
-use WayOfDev\WebhookClient\SignatureValidator\SignatureValidator;
 
 use function is_subclass_of;
 
-class WebhookConfig
+class Config
 {
     public string $name;
 
@@ -27,7 +27,7 @@ class WebhookConfig
 
     public RespondsToWebhook $webhookResponse;
 
-    public string $webhookModel;
+    public string $webhookEntity;
 
     public array|string $storeHeaders;
 
@@ -60,7 +60,7 @@ class WebhookConfig
         }
         $this->webhookResponse = app($webhookResponseClass);
 
-        $this->webhookModel = $properties['webhook_entity'];
+        $this->webhookEntity = $properties['webhook_entity'];
 
         $this->storeHeaders = $properties['store_headers'] ?? [];
 

@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace WayOfDev\WebhookClient\Tests;
 
+use WayOfDev\WebhookClient\Config;
 use WayOfDev\WebhookClient\Entities\WebhookCall;
 use WayOfDev\WebhookClient\Exceptions\InvalidConfig;
 use WayOfDev\WebhookClient\Profile\ProcessEverythingWebhookProfile;
 use WayOfDev\WebhookClient\Response\DefaultRespondsTo;
 use WayOfDev\WebhookClient\SignatureValidator\DefaultSignatureValidator;
 use WayOfDev\WebhookClient\Tests\TestClasses\Jobs\ProcessWebhookJobTestClass;
-use WayOfDev\WebhookClient\WebhookConfig;
 
 class WebhookConfigTest extends TestCase
 {
@@ -23,14 +23,14 @@ class WebhookConfigTest extends TestCase
     {
         $configArray = $this->getValidConfig();
 
-        $webhookConfig = new WebhookConfig($configArray);
+        $webhookConfig = new Config($configArray);
 
         $this::assertEquals($configArray['name'], $webhookConfig->name);
         $this::assertEquals($configArray['signing_secret'], $webhookConfig->signingSecret);
         $this::assertEquals($configArray['signature_header_name'], $webhookConfig->signatureHeaderName);
         $this::assertInstanceOf($configArray['signature_validator'], $webhookConfig->signatureValidator);
         $this::assertInstanceOf($configArray['webhook_profile'], $webhookConfig->webhookProfile);
-        $this::assertEquals($configArray['webhook_entity'], $webhookConfig->webhookModel);
+        $this::assertEquals($configArray['webhook_entity'], $webhookConfig->webhookEntity);
         $this::assertEquals($configArray['process_webhook_job'], $webhookConfig->processWebhookJobClass);
     }
 
@@ -44,7 +44,7 @@ class WebhookConfigTest extends TestCase
 
         $this->expectException(InvalidConfig::class);
 
-        new WebhookConfig($config);
+        new Config($config);
     }
 
     /**
@@ -57,7 +57,7 @@ class WebhookConfigTest extends TestCase
 
         $this->expectException(InvalidConfig::class);
 
-        new WebhookConfig($config);
+        new Config($config);
     }
 
     /**
@@ -70,7 +70,7 @@ class WebhookConfigTest extends TestCase
 
         $this->expectException(InvalidConfig::class);
 
-        new WebhookConfig($config);
+        new Config($config);
     }
 
     /**
@@ -83,7 +83,7 @@ class WebhookConfigTest extends TestCase
         $config = $this->getValidConfig();
         $config['webhook_response'] = null;
 
-        $this::assertInstanceOf(DefaultRespondsTo::class, (new WebhookConfig($config))->webhookResponse);
+        $this::assertInstanceOf(DefaultRespondsTo::class, (new Config($config))->webhookResponse);
     }
 
     /**
@@ -96,7 +96,7 @@ class WebhookConfigTest extends TestCase
 
         $this->expectException(InvalidConfig::class);
 
-        new WebhookConfig($config);
+        new Config($config);
     }
 
     protected function getValidConfig(): array

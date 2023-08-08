@@ -8,14 +8,17 @@ use Cycle\ORM\RepositoryInterface;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+use WayOfDev\WebhookClient\Config;
 use WayOfDev\WebhookClient\Entities\WebhookCall;
-use WayOfDev\WebhookClient\WebhookConfig;
 
+/**
+ * @template TEntity of WebhookCall
+ */
 interface WebhookCallRepository extends RepositoryInterface
 {
     public function first(): ?WebhookCall;
 
-    public function store(WebhookConfig $config, Request $request): WebhookCall;
+    public function store(Config $config, Request $request): WebhookCall;
 
     public function storeException(WebhookCall $webhookCall, Exception $exception): void;
 

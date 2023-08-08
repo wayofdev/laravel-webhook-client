@@ -6,12 +6,12 @@ namespace WayOfDev\WebhookClient\Tests\TestClasses\Responses;
 
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use WayOfDev\WebhookClient\Response\RespondsToWebhook;
-use WayOfDev\WebhookClient\WebhookConfig;
+use WayOfDev\WebhookClient\Config;
+use WayOfDev\WebhookClient\Contracts\RespondsToWebhook;
 
 class CustomRespondsToWebhook implements RespondsToWebhook
 {
-    public function respondToValidWebhook(Request $request, WebhookConfig $config): Response
+    public function respondToValidWebhook(Request $request, Config $config): Response
     {
         return response()->json(['foo' => 'bar']);
     }

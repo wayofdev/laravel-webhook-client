@@ -5,25 +5,23 @@ declare(strict_types=1);
 namespace WayOfDev\WebhookClient\Tests\Bridge\Laravel\Http\Controllers;
 
 use Cycle\ORM\ORMInterface;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Facades\Route;
 use JsonException;
-use Symfony\Component\HttpFoundation\Response as ResponseAlias;
+use Symfony\Component\HttpFoundation\Response;
 use WayOfDev\WebhookClient\Bridge\Laravel\Events\InvalidWebhookSignatureEvent;
+use WayOfDev\WebhookClient\Config;
+use WayOfDev\WebhookClient\ConfigRepository;
 use WayOfDev\WebhookClient\Contracts\WebhookCallRepository;
-use WayOfDev\WebhookClient\Entities\WebhookCall;
 use WayOfDev\WebhookClient\Exceptions\InvalidConfig;
 use WayOfDev\WebhookClient\Tests\TestCase;
+use WayOfDev\WebhookClient\Tests\TestClasses\Entities\WebhookEntityWithoutPayloadSaved;
 use WayOfDev\WebhookClient\Tests\TestClasses\Jobs\ProcessWebhookJobTestClass;
 use WayOfDev\WebhookClient\Tests\TestClasses\Profile\ProcessNothingWebhookProfile;
 use WayOfDev\WebhookClient\Tests\TestClasses\Responses\CustomRespondsToWebhook;
 use WayOfDev\WebhookClient\Tests\TestClasses\SignatureValidator\EverythingIsValidSignatureValidator;
 use WayOfDev\WebhookClient\Tests\TestClasses\SignatureValidator\NothingIsValidSignatureValidator;
-// use WayOfDev\WebhookClient\Tests\TestClasses\WebhookModelWithoutPayloadSaved;
-use WayOfDev\WebhookClient\WebhookConfig;
-use WayOfDev\WebhookClient\WebhookConfigRepository;
 
 use function count;
 use function hash_hmac;
@@ -51,7 +49,7 @@ final class WebhookControllerTest extends TestCase
         Queue::fake();
         Event::fake();
 
-        $this->repository = app(ORMInterface::class)->getRepository(WebhookCall::class);
+        $this->repository = $this->resolveWebhookCallRepository();
 
         $this->payload = ['a' => 1];
 
@@ -60,7 +58,9 @@ final class WebhookControllerTest extends TestCase
         ];
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function it_can_process_a_webhook_request(): void
     {
         $this->withoutExceptionHandling();
@@ -73,16 +73,18 @@ final class WebhookControllerTest extends TestCase
 
         $webhookCall = $this->repository->first();
         $this::assertEquals('default', $webhookCall->name());
-        $this::assertEquals(['a' => 1], $webhookCall->payload());
+        $this::assertEquals(['a' => 1], $webhookCall->payload()->toArray());
 
         Queue::assertPushed(ProcessWebhookJobTestClass::class, function (ProcessWebhookJobTestClass $job) {
-            $this::assertEquals(1, $job->webhookCall->id);
+            $this::assertEquals(1, $job->webhookCall->id());
 
             return true;
         });
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function a_request_with_an_invalid_payload_will_not_get_processed(): void
     {
         $headers = $this->headers;
@@ -97,7 +99,9 @@ final class WebhookControllerTest extends TestCase
         Event::assertDispatched(InvalidWebhookSignatureEvent::class);
     }
 
-    /** @test
+    /**
+     * @test
+     *
      * @throws InvalidConfig
      */
     public function it_can_work_with_an_alternative_signature_validator(): void
@@ -117,7 +121,9 @@ final class WebhookControllerTest extends TestCase
             ->assertStatus(500);
     }
 
-    /** @test
+    /**
+     * @test
+     *
      * @throws InvalidConfig
      */
     public function it_can_work_with_an_alternative_profile(): void
@@ -134,7 +140,9 @@ final class WebhookControllerTest extends TestCase
         $this::assertCount(0, $this->repository->findAll());
     }
 
-    /** @test
+    /**
+     * @test
+     *
      * @throws InvalidConfig
      */
     public function it_can_work_with_an_alternative_config(): void
@@ -143,7 +151,7 @@ final class WebhookControllerTest extends TestCase
 
         $this
             ->postJson('incoming-webhooks-alternative-config', $this->payload, $this->headers)
-            ->assertStatus(ResponseAlias::HTTP_INTERNAL_SERVER_ERROR);
+            ->assertStatus(Response::HTTP_INTERNAL_SERVER_ERROR);
 
         config()->set('webhook-client.configs.0.name', 'alternative-config');
         $this->refreshWebhookConfigRepository();
@@ -153,25 +161,29 @@ final class WebhookControllerTest extends TestCase
             ->assertSuccessful();
     }
 
-    //    /** @test
-    //     * @throws InvalidConfig
-    //     */
-    //    public function it_can_work_with_an_alternative_model(): void
-    //    {
-    //        $this->withoutExceptionHandling();
+    // /**
+    //  * @test
+    //  *
+    //  * @throws InvalidConfig
+    //  */
+    // public function it_can_work_with_an_alternative_entity(): void
+    // {
+    //     $this->withoutExceptionHandling();
     //
-    //        config()->set('webhook-client.configs.0.webhook_model', WebhookModelWithoutPayloadSaved::class);
-    //        $this->refreshWebhookConfigRepository();
+    //     config()->set('webhook-client.configs.0.webhook_entity', WebhookEntityWithoutPayloadSaved::class);
+    //     $this->refreshWebhookConfigRepository();
     //
-    //        $this
-    //            ->postJson('incoming-webhooks', $this->payload, $this->headers)
-    //            ->assertSuccessful();
+    //     $this
+    //         ->postJson('incoming-webhooks', $this->payload, $this->headers)
+    //         ->assertSuccessful();
     //
-    //        $this::assertCount(1, $this->repository->findAll());
-    //        $this::assertEquals([], $this->repository->first()->payload);
-    //    }
+    //     $this::assertCount(1, $this->repository->findAll());
+    //     $this::assertEquals([], $this->repository->first()->payload()->toArray());
+    // }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function it_can_respond_with_custom_response(): void
     {
         config()->set('webhook-client.configs.0.webhook_response', CustomRespondsToWebhook::class);
@@ -184,7 +196,9 @@ final class WebhookControllerTest extends TestCase
             ]);
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function it_can_store_a_specific_header(): void
     {
         $this->withoutExceptionHandling();
@@ -200,7 +214,9 @@ final class WebhookControllerTest extends TestCase
         $this::assertEquals($this->headers['Signature'], $this->repository->first()->headerBag()->get('Signature'));
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function it_can_store_all_headers(): void
     {
         $this->withoutExceptionHandling();
@@ -215,7 +231,9 @@ final class WebhookControllerTest extends TestCase
         $this::assertGreaterThan(1, count($this->repository->first()->headers()));
     }
 
-    /** @test */
+    /**
+     * @test
+     */
     public function it_can_store_none_of_the_headers(): void
     {
         $this->withoutExceptionHandling();
@@ -245,8 +263,19 @@ final class WebhookControllerTest extends TestCase
      */
     private function refreshWebhookConfigRepository(): void
     {
-        $webhookConfig = new WebhookConfig(config('webhook-client.configs.0'));
+        $webhookConfig = new Config(config('webhook-client.configs.0'));
 
-        app(WebhookConfigRepository::class)->addConfig($webhookConfig);
+        app(ConfigRepository::class)->addConfig($webhookConfig);
+    }
+
+    private function resolveWebhookCallRepository(): WebhookCallRepository
+    {
+        /** @var WebhookCallRepository $repository */
+        $repository = app(ORMInterface::class)
+            ->getRepository(
+                config('webhook-client.configs.0.webhook_entity')
+            );
+
+        return $repository;
     }
 }
