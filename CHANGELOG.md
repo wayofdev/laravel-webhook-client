@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.0.0 (2023-08-08)
+
+
+### Features
+
+* initial commit ([9d7ca09](https://github.com/wayofdev/laravel-webhook-client/commit/9d7ca09865fd5bb597df76f365fdd6b505e3ce66))
+* support for web-hooks ([792e37d](https://github.com/wayofdev/laravel-webhook-client/commit/792e37dd44af1ef14d75f67bb9d3f3b0dc02c81f))
+
+
+### Bug Fixes
+
+* remove testing migrations ([d5b58c7](https://github.com/wayofdev/laravel-webhook-client/commit/d5b58c7244506be89753cfd6d1b5245a4ec91d92))
+
 ## [2.1.70](https://github.com/wayofdev/laravel-package-tpl/compare/v2.1.69...v2.1.70) (2023-08-05)
 
 
