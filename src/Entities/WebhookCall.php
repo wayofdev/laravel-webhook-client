@@ -33,7 +33,7 @@ class WebhookCall
     private Payload $payload;
 
     #[Column(type: 'json', nullable: true, typecast: [ExceptionTypecast::class, 'castValue'])]
-    private ?ExceptionTypecast $exception;
+    private ExceptionTypecast $exception;
 
     #[Column(type: 'datetime')]
     private DateTimeImmutable $createdAt;
@@ -46,7 +46,7 @@ class WebhookCall
         string $url,
         Headers $headers,
         Payload $payload,
-        ?ExceptionTypecast $exception,
+        ExceptionTypecast $exception,
         DateTimeImmutable $createdAt,
     ) {
         $this->name = $name;
@@ -101,7 +101,7 @@ class WebhookCall
 
     public function clearException(): void
     {
-        $this->exception = null;
+        $this->exception = ExceptionTypecast::fromArray([]);
     }
 
     public function createdAt(): DateTimeImmutable
