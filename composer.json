@@ -5,8 +5,8 @@
     "license": "MIT",
     "homepage": "https://wayof.dev",
     "support": {
-        "issues": "https://github.com/wayofdev/laravel-package-tpl/issues",
-        "source": "https://github.com/wayofdev/laravel-package-tpl"
+        "issues": "https://github.com/wayofdev/laravel-webhook-client/issues",
+        "source": "https://github.com/wayofdev/laravel-webhook-client"
     },
     "authors": [
         {
