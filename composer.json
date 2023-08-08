@@ -54,7 +54,7 @@
     "scripts": {
         "cs:fix": "php vendor/bin/php-cs-fixer fix -v",
         "cs:diff": "php vendor/bin/php-cs-fixer fix --dry-run -v --diff",
-        "test": "php vendor/bin/pest --colors=always",
+        "test": "XDEBUG_MODE=coverage php vendor/bin/pest --colors=always",
         "test:cc": "XDEBUG_MODE=coverage php vendor/bin/pest --colors=always --coverage-clover coverage.xml",
         "stan": "php vendor/bin/phpstan analyse --memory-limit=2G",
         "stan:ci": "php vendor/bin/phpstan analyse --memory-limit=2G --error-format=github"

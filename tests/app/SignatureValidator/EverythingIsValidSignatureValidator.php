@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace WayOfDev\WebhookClient\Tests\TestClasses\SignatureValidator;
+namespace WayOfDev\WebhookClient\App\SignatureValidator;
 
 use Illuminate\Http\Request;
 use WayOfDev\WebhookClient\Config;
 use WayOfDev\WebhookClient\Contracts\SignatureValidator;
 
-class NothingIsValidSignatureValidator implements SignatureValidator
+class EverythingIsValidSignatureValidator implements SignatureValidator
 {
     public function isValid(Request $request, Config $config): bool
     {
-        return false;
+        return true;
     }
 }

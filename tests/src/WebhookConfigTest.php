@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace WayOfDev\WebhookClient\Tests;
 
+use WayOfDev\WebhookClient\App\Jobs\ProcessWebhookJobTestClass;
 use WayOfDev\WebhookClient\Config;
 use WayOfDev\WebhookClient\Entities\WebhookCall;
 use WayOfDev\WebhookClient\Exceptions\InvalidConfig;
 use WayOfDev\WebhookClient\Profile\ProcessEverythingWebhookProfile;
 use WayOfDev\WebhookClient\Response\DefaultRespondsTo;
 use WayOfDev\WebhookClient\SignatureValidator\DefaultSignatureValidator;
-use WayOfDev\WebhookClient\Tests\TestClasses\Jobs\ProcessWebhookJobTestClass;
 
 class WebhookConfigTest extends TestCase
 {

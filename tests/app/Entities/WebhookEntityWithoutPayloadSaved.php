@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WayOfDev\WebhookClient\Tests\TestClasses\Entities;
+namespace WayOfDev\WebhookClient\App\Entities;
 
 use Cycle\Annotated\Annotation\Entity;
 use WayOfDev\WebhookClient\Contracts\WebhookCallRepository;
