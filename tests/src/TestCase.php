@@ -33,7 +33,7 @@ abstract class TestCase extends Orchestra
                 'cycle.tokenizer.directories' => array_merge(
                     config('cycle.tokenizer.directories'),
                     [__DIR__ . '/../../src/Entities'],
-                    [__DIR__ . '/TestClasses/Entities'],
+                    [__DIR__ . '/../app/Entities'],
                 ),
                 'cycle.migrations.directory' => $this->migrationsPath,
             ]);

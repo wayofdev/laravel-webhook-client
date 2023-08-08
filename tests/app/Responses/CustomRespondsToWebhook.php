@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WayOfDev\WebhookClient\Tests\TestClasses\Responses;
+namespace WayOfDev\WebhookClient\App\Responses;
 
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;

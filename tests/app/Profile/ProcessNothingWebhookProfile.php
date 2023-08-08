@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WayOfDev\WebhookClient\Tests\TestClasses\Profile;
+namespace WayOfDev\WebhookClient\App\Profile;
 
 use Illuminate\Http\Request;
 use WayOfDev\WebhookClient\Contracts\WebhookProfile;
