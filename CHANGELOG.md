@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7](https://github.com/wayofdev/laravel-webhook-client/compare/v1.0.6...v1.0.7) (2023-08-08)
+
+
+### Miscellaneous
+
+* release 1.0.7 ([dff7b51](https://github.com/wayofdev/laravel-webhook-client/commit/dff7b5180e77865e6019d43b28fd54848cba9423))
+
 ## [1.0.6](https://github.com/wayofdev/laravel-webhook-client/compare/v1.0.5...v1.0.6) (2023-08-08)
 
 
