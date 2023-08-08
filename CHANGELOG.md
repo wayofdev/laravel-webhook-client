@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/wayofdev/laravel-webhook-client/compare/v1.0.4...v1.0.5) (2023-08-08)
+
+
+### Miscellaneous
+
+* **deps:** update dependency orchestra/testbench to v8.6.1 ([d597451](https://github.com/wayofdev/laravel-webhook-client/commit/d597451337ec14c1fe092878a6a5f9f30136aed6))
+
 ## [1.0.4](https://github.com/wayofdev/laravel-webhook-client/compare/v1.0.3...v1.0.4) (2023-08-08)
 
 
