@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.12](https://github.com/wayofdev/laravel-webhook-client/compare/v1.0.11...v1.0.12) (2023-08-09)
+
+
+### Miscellaneous
+
+* update docs ([399640e](https://github.com/wayofdev/laravel-webhook-client/commit/399640e07840ba8b22af78915838a4b84cef2991))
+
 ## [1.0.11](https://github.com/wayofdev/laravel-webhook-client/compare/v1.0.10...v1.0.11) (2023-08-09)
 
 
