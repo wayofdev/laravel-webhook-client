@@ -15,6 +15,7 @@ use WayOfDev\WebhookClient\Entities\Exception as ExceptionTypecast;
 #[Entity(role: 'webhook_call', repository: WebhookCallRepository::class, table: 'webhook_calls')]
 #[Behavior\CreatedAt(field: 'createdAt', column: 'created_at')]
 #[Behavior\UpdatedAt(field: 'updatedAt', column: 'updated_at')]
+#[Behavior\SoftDelete(field: 'deletedAt', column: 'deleted_at')]
 class WebhookCall
 {
     #[Column(type: 'primary')]
@@ -40,6 +41,9 @@ class WebhookCall
 
     #[Column(type: 'datetime')]
     private DateTimeImmutable $updatedAt;
+
+    #[Column(type: 'datetime', nullable: true)]
+    private ?DateTimeImmutable $deletedAt = null;
 
     public function __construct(
         string $name,
@@ -112,5 +116,10 @@ class WebhookCall
     public function updatedAt(): DateTimeImmutable
     {
         return $this->updatedAt;
+    }
+
+    public function deletedAt(): ?DateTimeImmutable
+    {
+        return $this->deletedAt;
     }
 }

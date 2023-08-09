@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use WayOfDev\WebhookClient\Entities\WebhookCall;
+use WayOfDev\WebhookClient\Persistence\ORMWebhookCallRepository;
 use WayOfDev\WebhookClient\Profile\ProcessEverythingWebhookProfile;
 use WayOfDev\WebhookClient\Response\DefaultRespondsTo;
 use WayOfDev\WebhookClient\SignatureValidator\DefaultSignatureValidator;
@@ -28,9 +29,9 @@ return [
             'signature_header_name' => 'Signature',
 
             /*
-             *  This class will verify that the content of the signature header is valid.
+             * This class will verify that the content of the signature header is valid.
              *
-             * It should implement \WayOfDev\WebhookClient\SignatureValidator\SignatureValidator
+             * It should implement \WayOfDev\WebhookClient\Contracts\SignatureValidator
              */
             'signature_validator' => DefaultSignatureValidator::class,
 
@@ -45,14 +46,20 @@ return [
             'webhook_response' => DefaultRespondsTo::class,
 
             /*
-             * The classname of the model to be used to store webhook calls. The class should
-             * be equal or extend WayOfDev\WebhookClient\Models\WebhookCall.
+             * The classname of the entity to be used to store webhook calls. The class should
+             * be equal or extend WayOfDev\WebhookClient\Entities\WebhookCall.
              */
             'webhook_entity' => WebhookCall::class,
 
             /*
+             * The classname of the repository to be used to store webhook calls. The class should
+             * implement WayOfDev\WebhookClient\Contracts\WebhookCallRepository.
+             */
+            'webhook_entity_repository' => ORMWebhookCallRepository::class,
+
+            /*
              * In this array, you can pass the headers that should be stored on
-             * the webhook call model when a webhook comes in.
+             * the webhook call entity when a webhook comes in.
              *
              * To store all headers, set this value to `*`.
              */
@@ -70,9 +77,9 @@ return [
     ],
 
     /*
-     * The integer amount of days after which models should be deleted.
+     * The integer amount of days after which database records should be deleted.
      *
-     * 7 deletes all records after 1 week. Set to null if no models should be deleted.
+     * 7 deletes all records after 1 week. Set to null if no database records should be deleted.
      */
     'delete_after_days' => 30,
 ];

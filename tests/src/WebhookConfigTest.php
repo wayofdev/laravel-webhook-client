@@ -8,6 +8,7 @@ use WayOfDev\WebhookClient\App\Jobs\ProcessWebhookJobTestClass;
 use WayOfDev\WebhookClient\Config;
 use WayOfDev\WebhookClient\Entities\WebhookCall;
 use WayOfDev\WebhookClient\Exceptions\InvalidConfig;
+use WayOfDev\WebhookClient\Persistence\ORMWebhookCallRepository;
 use WayOfDev\WebhookClient\Profile\ProcessEverythingWebhookProfile;
 use WayOfDev\WebhookClient\Response\DefaultRespondsTo;
 use WayOfDev\WebhookClient\SignatureValidator\DefaultSignatureValidator;
@@ -31,6 +32,7 @@ class WebhookConfigTest extends TestCase
         $this::assertInstanceOf($configArray['signature_validator'], $webhookConfig->signatureValidator);
         $this::assertInstanceOf($configArray['webhook_profile'], $webhookConfig->webhookProfile);
         $this::assertEquals($configArray['webhook_entity'], $webhookConfig->webhookEntity);
+        $this::assertEquals($configArray['webhook_entity_repository'], $webhookConfig->webhookEntityRepository);
         $this::assertEquals($configArray['process_webhook_job'], $webhookConfig->processWebhookJobClass);
     }
 
@@ -109,6 +111,7 @@ class WebhookConfigTest extends TestCase
             'webhook_profile' => ProcessEverythingWebhookProfile::class,
             'webhook_response' => DefaultRespondsTo::class,
             'webhook_entity' => WebhookCall::class,
+            'webhook_entity_repository' => ORMWebhookCallRepository::class,
             'process_webhook_job' => ProcessWebhookJobTestClass::class,
         ];
     }
