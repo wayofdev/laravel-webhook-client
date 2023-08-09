@@ -29,6 +29,8 @@ class Config
 
     public string $webhookEntity;
 
+    public string $webhookEntityRepository;
+
     public array|string $storeHeaders;
 
     public string $processWebhookJobClass;
@@ -61,6 +63,7 @@ class Config
         $this->webhookResponse = app($webhookResponseClass);
 
         $this->webhookEntity = $properties['webhook_entity'];
+        $this->webhookEntityRepository = $properties['webhook_entity_repository'];
 
         $this->storeHeaders = $properties['store_headers'] ?? [];
 
