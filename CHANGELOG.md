@@ -1,5 +1,33 @@
 # Changelog
 
+## [1.0.10](https://github.com/wayofdev/laravel-webhook-client/compare/v1.0.9...v1.0.10) (2023-08-09)
+
+
+### Miscellaneous
+
+* **deps:** update dependency orchestra/testbench to v8.6.2 ([#26](https://github.com/wayofdev/laravel-webhook-client/issues/26)) ([8886bae](https://github.com/wayofdev/laravel-webhook-client/commit/8886bae99312f55ac303bc6e2c38f7c51b8f5e2a))
+
+## [1.0.9](https://github.com/wayofdev/laravel-webhook-client/compare/v1.0.8...v1.0.9) (2023-08-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency laravel/framework to v10.18.0 ([#23](https://github.com/wayofdev/laravel-webhook-client/issues/23)) ([da0e337](https://github.com/wayofdev/laravel-webhook-client/commit/da0e337b320676a3fd4789c353d180bc0073607f))
+
+## [1.0.8](https://github.com/wayofdev/laravel-webhook-client/compare/v1.0.7...v1.0.8) (2023-08-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency wayofdev/laravel-cycle-orm-adapter to v4.0.47 ([#22](https://github.com/wayofdev/laravel-webhook-client/issues/22)) ([257fc42](https://github.com/wayofdev/laravel-webhook-client/commit/257fc4232d2b23ab2561635e3bf9e1fe73f25dd8))
+
+## [1.0.7](https://github.com/wayofdev/laravel-webhook-client/compare/v1.0.6...v1.0.7) (2023-08-08)
+
+
+### Miscellaneous
+
+* release 1.0.7 ([dff7b51](https://github.com/wayofdev/laravel-webhook-client/commit/dff7b5180e77865e6019d43b28fd54848cba9423))
+
 ## [1.0.6](https://github.com/wayofdev/laravel-webhook-client/compare/v1.0.5...v1.0.6) (2023-08-08)
 
 
