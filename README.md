@@ -1,8 +1,8 @@
 <br>
 
 <div align="center">
-<img width="456" src="https://raw.githubusercontent.com/wayofdev/ansible-role-tpl/master/assets/logo.gh-light-mode-only.png#gh-light-mode-only">
-<img width="456" src="https://raw.githubusercontent.com/wayofdev/ansible-role-tpl/master/assets/logo.gh-dark-mode-only.png#gh-dark-mode-only">
+<img width="456" src="https://raw.githubusercontent.com/wayofdev/ansible-role-tpl/master/assets/logo.gh-light-mode-only.png#gh-light-mode-only" alt="Dark WOD logo for light theme">
+<img width="456" src="https://raw.githubusercontent.com/wayofdev/ansible-role-tpl/master/assets/logo.gh-dark-mode-only.png#gh-dark-mode-only" alt="Light WOD logo for dark theme">
 </div>
 
 
@@ -219,7 +219,7 @@ Once you've completed the installation, here's a comprehensive breakdown of how 
 2. **Webhook Profile Evaluation:**
    * Each incoming request interacts with a webhook profile, which is essentially a class that evaluates if a request should be both saved and processed within your application.
    * This profile enables filtering of specific webhook requests based on the app's requirements.
-   * [Your own custom webhook profile](#determining-which-webhook-requests-should-be-stored-and-processed) can be created, to change or extend this logic.
+   * [Your own custom webhook profile](#-determining-which-webhook-requests-should-be-stored-and-processed) can be created, to change or extend this logic.
 3. **Storage & Processing:**
    * If the profile gives the go-ahead, the request is first saved in the `webhook_calls` table.
    * Subsequently, a queued job handles the `WebhookCall` entity.
@@ -228,9 +228,7 @@ Once you've completed the installation, here's a comprehensive breakdown of how 
    * If any issues arise during job queuing, the package logs the exception within the `exception` field of the `WebhookCall` entity. 
 4. **Webhook Response:**
    * Once the job is dispatched, a webhook response takes charge. This class determines the HTTP response for the request.
-   * By default, a `200` status code with an 'ok' message is returned. However, you can also craft a custom webhook response. Learn how to easly [create your own webhook response](#creating-your-own-webhook-response).
-
-<br>
+   * By default, a `200` status code with an 'ok' message is returned. However, you can also craft a custom webhook response. Learn how to easily [create your own webhook response](#-creating-your-own-webhook-response).
 
 ### → Verifying the signature of incoming webhooks
 
@@ -244,7 +242,7 @@ $computedSignature = hash_hmac(
 );
 ```
 
-If the `$computedSignature` does match the value, the request will be [passed to the webhook profile](#determining-which-webhook-requests-should-be-stored-and-processed). If `$computedSignature` does not match the value in the signature header, the package will respond with a `500` and discard the request.
+If the `$computedSignature` does match the value, the request will be [passed to the webhook profile](#-determining-which-webhook-requests-should-be-stored-and-processed). If `$computedSignature` does not match the value in the signature header, the package will respond with a `500` and discard the request.
 
 ### → Creating your own signature validator
 
@@ -274,7 +272,7 @@ After creating your own `SignatureValidator` you must register it in the `signat
 
 After the signature of an incoming webhook request is validated, the request will be passed to a webhook profile. A webhook profile is a class that determines if the request should be stored and processed. If the webhook sending app sends out request where your app isn't interested in, you can use this class to filter out such events.
 
-By default the `\WayOfDev\WebhookClient\Profile\ProcessEverythingWebhookProfile` class is used. As its name implies, this default class will determine that all incoming requests should be stored and processed.
+By default, the `\WayOfDev\WebhookClient\Profile\ProcessEverythingWebhookProfile` class is used. As its name implies, this default class will determine that all incoming requests should be stored and processed.
 
 ### → Creating your own webhook profile
 
@@ -333,8 +331,6 @@ class ProcessWebhookJob extends AbstractProcessWebhookJob
 
 You should specify the class name of your job in the `process_webhook_job` of the `webhook-client` config file.
 
-<br>
-
 ### → Creating your own webhook response
 
 A webhook response is any class that implements `\WayOfDev\WebhookClient\Contracts\RespondsToWebhook`. This is what that interface looks like:
@@ -357,8 +353,6 @@ interface RespondsToWebhook
 ```
 
 After creating your own `WebhookResponse` you must register it in the `webhook_response` key in the `webhook-client` config file.
-
-<br>
 
 ### → Handling incoming webhook request for multiple apps
 
@@ -410,8 +404,6 @@ Route::webhooks('receiving-url-for-app-1', 'webhook-sending-app-1');
 Route::webhooks('receiving-url-for-app-2', 'webhook-sending-app-2');
 ```
 
-<br>
-
 ### → Change route method
 
 Being an incoming webhook client, there are instances where you might want to establish a route method other than the default `post`. You have the flexibility to modify the standard post method to options such as `get`, `put`, `patch`, or `delete`.
@@ -422,8 +414,6 @@ Route::webhooks('receiving-url-for-app-1', 'webhook-sending-app-1', 'put');
 Route::webhooks('receiving-url-for-app-1', 'webhook-sending-app-1', 'patch');
 Route::webhooks('receiving-url-for-app-1', 'webhook-sending-app-1', 'delete');
 ```
-
-<br>
 
 ### → Using the package without a controller
 
@@ -457,13 +447,11 @@ $webhookConfig = new Config([
 (new WebhookProcessor($request, $webhookConfig))->process();
 ```
 
-<br>
-
 ### → Deleting entities
 
 Whenever a webhook comes in, this package will store as a `WebhookCall` entity. After a while, you might want to delete old entities.
 
-@todo Laravel version uses mass-prunable trait, so, entity deletion logic should be re-written using laravel console commands or by commiting to cycle-orm.
+@todo Laravel version uses mass-prunable trait, so, entity deletion logic should be re-written using laravel console commands or by committing to cycle-orm.
 
 In this example all entities will be deleted when older than 30 days.
 
@@ -533,4 +521,3 @@ Thank you for considering contributing to the wayofdev community! We are open to
 - 🐛 Report an issue
 - 📖 Improve documentation
 - 👨‍💻 Contribute to the code
-
