@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.13](https://github.com/wayofdev/laravel-webhook-client/compare/v1.0.12...v1.0.13) (2023-08-09)
+
+
+### Miscellaneous
+
+* remove spaces in readme ([bd2e760](https://github.com/wayofdev/laravel-webhook-client/commit/bd2e760b3eaa006cb79a0db330c9facc12709a33))
+
 ## [1.0.12](https://github.com/wayofdev/laravel-webhook-client/compare/v1.0.11...v1.0.12) (2023-08-09)
 
 
