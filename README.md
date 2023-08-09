@@ -39,8 +39,6 @@ Require as dependency:
 $ composer req wayofdev/laravel-webhook-client
 ```
 
-<br>
-
 ### → Configuring the package
 
 You can publish the config file with:
@@ -143,8 +141,6 @@ In the `signing_secret` key of the config file, you should add a valid webhook s
 
 This package will try to store and respond to the webhook as fast as possible. Processing the payload of the request is done via a queued job. It's recommended to not use the `sync` driver but a real queue driver. You should specify the job that will handle processing webhook requests in the `process_webhook_job` of the config file. A valid job is any class that extends `WayOfDev\WebhookClient\Bridge\Laravel\Jobs\ProcessWebhookJob` and has a `handle` method.
 
-<br>
-
 ### → Preparing the database
 
 By default, all webhook calls will get saved in the database.
@@ -189,7 +185,6 @@ To create the table that holds the webhook calls:
    $ php artisan cycle:migrate
    ```
 
-   <br>
 
 ### → Taking care of routing
 
