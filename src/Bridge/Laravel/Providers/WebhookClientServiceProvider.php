@@ -15,8 +15,10 @@ use WayOfDev\WebhookClient\Config;
 use WayOfDev\WebhookClient\ConfigRepository;
 use WayOfDev\WebhookClient\Contracts\WebhookCallRepository;
 use WayOfDev\WebhookClient\Exceptions\InvalidConfig;
+use WayOfDev\WebhookClient\Exceptions\InvalidMethod;
 use WayOfDev\WebhookClient\Persistence\ORMWebhookCallRepository;
 
+use function in_array;
 use function is_null;
 
 final class WebhookClientServiceProvider extends ServiceProvider
@@ -34,8 +36,13 @@ final class WebhookClientServiceProvider extends ServiceProvider
 
     public function register(): void
     {
-        Route::macro('webhooks', function (string $url, string $name = 'default') {
-            return Route::post($url, WebhookController::class)->name("webhook-client-{$name}");
+        Route::macro('webhooks', function (string $url, string $name = 'default', $method = 'post') {
+            if (! in_array($method, ['get', 'post', 'put', 'patch', 'delete'], true)) {
+                throw InvalidMethod::make($method);
+            }
+
+            // @phpstan-ignore-next-line
+            return Route::{$method}($url, WebhookController::class)->name("webhook-client-{$name}");
         });
 
         $this->app->scoped(ConfigRepository::class, function () {
