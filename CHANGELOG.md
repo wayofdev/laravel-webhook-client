@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/wayofdev/laravel-webhook-client/compare/v1.0.16...v1.1.0) (2023-08-10)
+
+
+### Features
+
+* support multiple http methods ([9983a30](https://github.com/wayofdev/laravel-webhook-client/commit/9983a30195158fc87eec240e358710545cff43a4))
+
 ## [1.0.16](https://github.com/wayofdev/laravel-webhook-client/compare/v1.0.15...v1.0.16) (2023-08-10)
 
 
