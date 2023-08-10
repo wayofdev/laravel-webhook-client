@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.0...v1.1.1) (2023-08-10)
+
+
+### Miscellaneous
+
+* **deps:** update dependency pestphp/pest-plugin-laravel to v2.2.0 ([4eae3a7](https://github.com/wayofdev/laravel-webhook-client/commit/4eae3a729f3d32ef2a8e11f58080d154840b84e9))
+
 ## [1.1.0](https://github.com/wayofdev/laravel-webhook-client/compare/v1.0.16...v1.1.0) (2023-08-10)
 
 
