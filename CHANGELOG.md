@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.9](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.8...v1.1.9) (2023-08-14)
+
+
+### Miscellaneous
+
+* **deps:** update dependency pestphp/pest to v2.14.0 ([259b939](https://github.com/wayofdev/laravel-webhook-client/commit/259b9395c9d7078fe0f7cc2babdf30cd0d98d1b1))
+* **deps:** update dependency phpstan/phpstan to v1.10.29 ([99f2bf4](https://github.com/wayofdev/laravel-webhook-client/commit/99f2bf4619b479694b603c126ac12a1837179e52))
+
 ## [1.1.8](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.7...v1.1.8) (2023-08-14)
 
 
