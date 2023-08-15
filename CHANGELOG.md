@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.14](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.13...v1.1.14) (2023-08-15)
+
+
+### Miscellaneous
+
+* **deps:** update dependency phpunit/phpunit to v10.3.2 ([e800abd](https://github.com/wayofdev/laravel-webhook-client/commit/e800abd47f0b1e3c0c988d909622085d087db8a5))
+
 ## [1.1.13](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.12...v1.1.13) (2023-08-14)
 
 
