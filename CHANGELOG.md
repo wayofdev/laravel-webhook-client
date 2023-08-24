@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.35](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.34...v1.1.35) (2023-08-24)
+
+
+### Miscellaneous
+
+* **deps:** update dependency phpstan/phpstan to v1.10.31 ([c44d49f](https://github.com/wayofdev/laravel-webhook-client/commit/c44d49f8d7da6129d54b97478c8da00c9b05a995))
+
 ## [1.1.34](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.33...v1.1.34) (2023-08-23)
 
 
