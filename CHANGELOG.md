@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.39](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.38...v1.1.39) (2023-08-24)
+
+
+### Miscellaneous
+
+* **deps:** update dependency wayofdev/cs-fixer-config to v1.2.47 ([df35489](https://github.com/wayofdev/laravel-webhook-client/commit/df35489f0b00efdd3f3c13acac9af900d890bea5))
+
 ## [1.1.38](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.37...v1.1.38) (2023-08-24)
 
 
