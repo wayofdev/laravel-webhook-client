@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.64](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.63...v1.1.64) (2023-09-04)
+
+
+### Miscellaneous
+
+* **deps:** update actions/checkout action to v4 ([c14002e](https://github.com/wayofdev/laravel-webhook-client/commit/c14002e27c962affb2043a607e2f2331f215b5c6))
+
 ## [1.1.63](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.62...v1.1.63) (2023-09-04)
 
 
