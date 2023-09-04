@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.63](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.62...v1.1.63) (2023-09-04)
+
+
+### Miscellaneous
+
+* **deps:** update dependency ergebnis/composer-normalize to v2.36.0 ([2db56a7](https://github.com/wayofdev/laravel-webhook-client/commit/2db56a7f781346a5faceeb0d58bbcd07c6d72d38))
+
 ## [1.1.62](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.61...v1.1.62) (2023-09-04)
 
 
