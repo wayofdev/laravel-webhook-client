@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.68](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.67...v1.1.68) (2023-09-07)
+
+
+### Bug Fixes
+
+* **deps:** update dependency laravel/framework to v10.22.0 ([382edbb](https://github.com/wayofdev/laravel-webhook-client/commit/382edbb15c5a4d765b57f894a55dd8dc0fd492bb))
+
 ## [1.1.67](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.66...v1.1.67) (2023-09-05)
 
 
