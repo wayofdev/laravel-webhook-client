@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.74](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.73...v1.1.74) (2023-09-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency wayofdev/laravel-cycle-orm-adapter to v4.0.93 ([8ecb9e5](https://github.com/wayofdev/laravel-webhook-client/commit/8ecb9e564b68bfe2b5fed9567e0630165e014843))
+
 ## [1.1.73](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.72...v1.1.73) (2023-09-11)
 
 
