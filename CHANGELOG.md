@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.88](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.87...v1.1.88) (2023-09-14)
+
+
+### Miscellaneous
+
+* **deps:** update codecov/codecov-action action to v4 ([e14944b](https://github.com/wayofdev/laravel-webhook-client/commit/e14944b8f84a01a89d4c350f06cd3b26ea71d9f2))
+
 ## [1.1.87](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.86...v1.1.87) (2023-09-14)
 
 
