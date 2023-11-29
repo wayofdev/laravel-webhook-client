@@ -22,7 +22,7 @@
         "cycle/entity-behavior": "^1.2",
         "cycle/orm": "^2.3",
         "laravel/framework": "^v10.13",
-        "symfony/http-foundation": "^6.3",
+        "symfony/http-foundation": "^7.0",
         "wayofdev/laravel-cycle-orm-adapter": "^4.0"
     },
     "require-dev": {
