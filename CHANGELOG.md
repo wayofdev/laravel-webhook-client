@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.88...v1.2.0) (2024-02-04)
+
+
+### Features
+
+* updating dependencies ([20a8a03](https://github.com/wayofdev/laravel-webhook-client/commit/20a8a03199b95195fe30b3260754f5d0a5824f2e))
+
+
+### Bug Fixes
+
+* labeler ci flow ([b922790](https://github.com/wayofdev/laravel-webhook-client/commit/b922790d82b1d506e8bf5faaab3a6dfc78a8f9da))
+
 ## [1.1.88](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.87...v1.1.88) (2023-09-14)
 
 
