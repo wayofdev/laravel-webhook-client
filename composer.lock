@@ -438,21 +438,21 @@
         },
         {
             "name": "cycle/schema-builder",
-            "version": "v2.7.0",
+            "version": "v2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cycle/schema-builder.git",
-                "reference": "67da7e79f6e7638f3d1f1068ade394461a1516aa"
+                "reference": "8fbc46372194b21e2eea6f36b9a4730629da4ab7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cycle/schema-builder/zipball/67da7e79f6e7638f3d1f1068ade394461a1516aa",
-                "reference": "67da7e79f6e7638f3d1f1068ade394461a1516aa",
+                "url": "https://api.github.com/repos/cycle/schema-builder/zipball/8fbc46372194b21e2eea6f36b9a4730629da4ab7",
+                "reference": "8fbc46372194b21e2eea6f36b9a4730629da4ab7",
                 "shasum": ""
             },
             "require": {
                 "cycle/database": "^2.7.1",
-                "cycle/orm": "^2.0",
+                "cycle/orm": "^2.7",
                 "php": ">=8.0",
                 "yiisoft/friendly-exception": "^1.1"
             },
@@ -475,9 +475,9 @@
             "description": "Cycle ORM Schema Builder",
             "support": {
                 "issues": "https://github.com/cycle/schema-builder/issues",
-                "source": "https://github.com/cycle/schema-builder/tree/v2.7.0"
+                "source": "https://github.com/cycle/schema-builder/tree/v2.8.0"
             },
-            "time": "2024-01-10T09:48:52+00:00"
+            "time": "2024-02-08T18:29:02+00:00"
         },
         {
             "name": "cycle/schema-migrations-generator",
@@ -6147,16 +6147,16 @@
         },
         {
             "name": "wayofdev/laravel-cycle-orm-adapter",
-            "version": "v4.1.6",
+            "version": "v4.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wayofdev/laravel-cycle-orm-adapter.git",
-                "reference": "cb60b3d5234192a0b859e828e5135eb72836383e"
+                "reference": "032a3bac72fb175c0466fdbbd9b349610ede89e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wayofdev/laravel-cycle-orm-adapter/zipball/cb60b3d5234192a0b859e828e5135eb72836383e",
-                "reference": "cb60b3d5234192a0b859e828e5135eb72836383e",
+                "url": "https://api.github.com/repos/wayofdev/laravel-cycle-orm-adapter/zipball/032a3bac72fb175c0466fdbbd9b349610ede89e0",
+                "reference": "032a3bac72fb175c0466fdbbd9b349610ede89e0",
                 "shasum": ""
             },
             "require": {
@@ -6237,7 +6237,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-02-08T18:26:21+00:00"
+            "time": "2024-02-08T23:07:40+00:00"
         },
         {
             "name": "webmozart/assert",
