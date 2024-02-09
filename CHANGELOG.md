@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.5](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.4...v1.2.5) (2024-02-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cycle/entity-behavior to v1.3.0 ([fe83e6a](https://github.com/wayofdev/laravel-webhook-client/commit/fe83e6ab182a8314fc21be0ba18ed985eabf637a))
+
 ## [1.2.4](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.3...v1.2.4) (2024-02-09)
 
 
