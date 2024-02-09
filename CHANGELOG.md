@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.6](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.5...v1.2.6) (2024-02-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cycle/annotated to v3.5.0 ([15895cb](https://github.com/wayofdev/laravel-webhook-client/commit/15895cb7a54a1337b4fe2f4a6dddcaf533896aac))
+
 ## [1.2.5](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.4...v1.2.5) (2024-02-09)
 
 
