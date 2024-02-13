@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.8](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.7...v1.2.8) (2024-02-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cycle/orm to v2.7.1 ([dd9893f](https://github.com/wayofdev/laravel-webhook-client/commit/dd9893fb990fb43f4b2c3d75979468f4560961ae))
+
 ## [1.2.7](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.6...v1.2.7) (2024-02-13)
 
 
