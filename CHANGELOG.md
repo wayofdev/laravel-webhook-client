@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.13](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.12...v1.2.13) (2024-02-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency symfony/http-foundation to v6.4.4 ([af41506](https://github.com/wayofdev/laravel-webhook-client/commit/af415061acee22fceb74b47e9697dab845aab796))
+
 ## [1.2.12](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.11...v1.2.12) (2024-02-21)
 
 
