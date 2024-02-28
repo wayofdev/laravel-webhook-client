@@ -6166,16 +6166,16 @@
         },
         {
             "name": "wayofdev/laravel-cycle-orm-adapter",
-            "version": "v4.4.0",
+            "version": "v4.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wayofdev/laravel-cycle-orm-adapter.git",
-                "reference": "d03489c7a5a7a9970ca14728d10478c557a692a7"
+                "reference": "d8f456e56f15e7f007cdc9cbff82f1c603002ab2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wayofdev/laravel-cycle-orm-adapter/zipball/d03489c7a5a7a9970ca14728d10478c557a692a7",
-                "reference": "d03489c7a5a7a9970ca14728d10478c557a692a7",
+                "url": "https://api.github.com/repos/wayofdev/laravel-cycle-orm-adapter/zipball/d8f456e56f15e7f007cdc9cbff82f1c603002ab2",
+                "reference": "d8f456e56f15e7f007cdc9cbff82f1c603002ab2",
                 "shasum": ""
             },
             "require": {
@@ -6257,7 +6257,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-02-28T01:55:40+00:00"
+            "time": "2024-02-28T04:33:37+00:00"
         },
         {
             "name": "webmozart/assert",
