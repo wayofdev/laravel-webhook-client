@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.19...v1.3.0) (2024-03-04)
+
+
+### Features
+
+* upgrade cycle-orm-adapter to support `cycle/annotated` v4 ([7a8c6f0](https://github.com/wayofdev/laravel-webhook-client/commit/7a8c6f0fab51faada6e08d304a51f5524d68f5c8))
+
 ## [1.2.19](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.18...v1.2.19) (2024-03-03)
 
 
