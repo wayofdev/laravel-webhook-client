@@ -1,5 +1,152 @@
 # Changelog
 
+## [1.2.19](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.18...v1.2.19) (2024-03-03)
+
+
+### Bug Fixes
+
+* **deps:** update dependency wayofdev/laravel-cycle-orm-adapter to v4.6.0 ([6d87c07](https://github.com/wayofdev/laravel-webhook-client/commit/6d87c071ec66b662a4e40769e656e1b1044b2366))
+
+## [1.2.18](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.17...v1.2.18) (2024-02-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency wayofdev/laravel-cycle-orm-adapter to v4.5.0 ([2005365](https://github.com/wayofdev/laravel-webhook-client/commit/2005365cf6d2dbea32003b1685e97325939df838))
+
+## [1.2.17](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.16...v1.2.17) (2024-02-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency wayofdev/laravel-cycle-orm-adapter to v4.4.0 ([ce8d14d](https://github.com/wayofdev/laravel-webhook-client/commit/ce8d14d45634905868061dc66c9afab06ffbccc6))
+
+## [1.2.16](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.15...v1.2.16) (2024-02-28)
+
+
+### Bug Fixes
+
+* **deps:** update dependency wayofdev/laravel-cycle-orm-adapter to v4.3.1 ([eff49b2](https://github.com/wayofdev/laravel-webhook-client/commit/eff49b2401f60ca32f3951aed6087747be0c22ff))
+
+## [1.2.15](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.14...v1.2.15) (2024-02-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency laravel/framework to v10.46.0 ([f1b96ca](https://github.com/wayofdev/laravel-webhook-client/commit/f1b96ca917fe053458a843c07d69a8d9a4fe5b1b))
+
+## [1.2.14](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.13...v1.2.14) (2024-02-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency wayofdev/laravel-cycle-orm-adapter to v4.2.1 ([4c4b735](https://github.com/wayofdev/laravel-webhook-client/commit/4c4b7354c954544e68cfaf2ac86fc9abb58f4e0f))
+
+## [1.2.13](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.12...v1.2.13) (2024-02-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency symfony/http-foundation to v6.4.4 ([af41506](https://github.com/wayofdev/laravel-webhook-client/commit/af415061acee22fceb74b47e9697dab845aab796))
+
+## [1.2.12](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.11...v1.2.12) (2024-02-21)
+
+
+### Bug Fixes
+
+* **deps:** update dependency laravel/framework to v10.45.1 ([7aa60c4](https://github.com/wayofdev/laravel-webhook-client/commit/7aa60c45a1cf8fd92a600a78f1c194cffa8bfbc4))
+
+## [1.2.11](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.10...v1.2.11) (2024-02-20)
+
+
+### Bug Fixes
+
+* **deps:** update dependency laravel/framework to v10.45.0 ([86e1178](https://github.com/wayofdev/laravel-webhook-client/commit/86e117855691b59e5808324630ffeae53a320e42))
+
+## [1.2.10](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.9...v1.2.10) (2024-02-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency laravel/framework to v10.44.0 ([27bbfad](https://github.com/wayofdev/laravel-webhook-client/commit/27bbfad16bd401dd00ae899518fd37c306079f6b))
+
+## [1.2.9](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.8...v1.2.9) (2024-02-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency wayofdev/laravel-cycle-orm-adapter to v4.2.0 ([f0efd11](https://github.com/wayofdev/laravel-webhook-client/commit/f0efd11c966971539b808e648fe3050a3d4f9cc5))
+
+## [1.2.8](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.7...v1.2.8) (2024-02-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cycle/orm to v2.7.1 ([dd9893f](https://github.com/wayofdev/laravel-webhook-client/commit/dd9893fb990fb43f4b2c3d75979468f4560961ae))
+
+## [1.2.7](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.6...v1.2.7) (2024-02-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency wayofdev/laravel-cycle-orm-adapter to v4.1.9 ([f3f3120](https://github.com/wayofdev/laravel-webhook-client/commit/f3f3120425a6aae1575235796bf34189d600b292))
+
+## [1.2.6](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.5...v1.2.6) (2024-02-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cycle/annotated to v3.5.0 ([15895cb](https://github.com/wayofdev/laravel-webhook-client/commit/15895cb7a54a1337b4fe2f4a6dddcaf533896aac))
+
+## [1.2.5](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.4...v1.2.5) (2024-02-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cycle/entity-behavior to v1.3.0 ([fe83e6a](https://github.com/wayofdev/laravel-webhook-client/commit/fe83e6ab182a8314fc21be0ba18ed985eabf637a))
+
+## [1.2.4](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.3...v1.2.4) (2024-02-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cycle/orm to v2.7.0 ([8b05c07](https://github.com/wayofdev/laravel-webhook-client/commit/8b05c07c813e6dae22111a2a921d56e170a60c0b))
+* **deps:** update dependency wayofdev/laravel-cycle-orm-adapter to v4.1.8 ([c97af7f](https://github.com/wayofdev/laravel-webhook-client/commit/c97af7f281ae245ee602b517115247599007cc83))
+
+## [1.2.3](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.2...v1.2.3) (2024-02-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency wayofdev/laravel-cycle-orm-adapter to v4.1.6 ([e020461](https://github.com/wayofdev/laravel-webhook-client/commit/e020461008b6763a102e12a6daa46c4980213788))
+
+## [1.2.2](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.1...v1.2.2) (2024-02-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cycle/database to v2.8.1 ([37bd374](https://github.com/wayofdev/laravel-webhook-client/commit/37bd3747981567745c8a523826b535f0cc49bc1b))
+
+## [1.2.1](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.0...v1.2.1) (2024-02-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cycle/database to v2.8.0 ([4b61b5d](https://github.com/wayofdev/laravel-webhook-client/commit/4b61b5df93e6504b91b69377217143d405d5a55e))
+* **deps:** update dependency wayofdev/laravel-cycle-orm-adapter to v4.1.4 ([28ffd2b](https://github.com/wayofdev/laravel-webhook-client/commit/28ffd2bf0ae0723305f8ed86a0fb02ec8ffd7527))
+
+## [1.2.0](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.88...v1.2.0) (2024-02-04)
+
+
+### Features
+
+* updating dependencies ([20a8a03](https://github.com/wayofdev/laravel-webhook-client/commit/20a8a03199b95195fe30b3260754f5d0a5824f2e))
+
+
+### Bug Fixes
+
+* labeler ci flow ([b922790](https://github.com/wayofdev/laravel-webhook-client/commit/b922790d82b1d506e8bf5faaab3a6dfc78a8f9da))
+
 ## [1.1.88](https://github.com/wayofdev/laravel-webhook-client/compare/v1.1.87...v1.1.88) (2023-09-14)
 
 
