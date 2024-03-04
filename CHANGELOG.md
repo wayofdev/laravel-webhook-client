@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/wayofdev/laravel-webhook-client/compare/v1.3.0...v1.3.1) (2024-03-04)
+
+
+### Bug Fixes
+
+* ignore build files when creating composer releases ([e473059](https://github.com/wayofdev/laravel-webhook-client/commit/e4730596c6ccb2394ef062448f1c7e03983fd8dc))
+
 ## [1.3.0](https://github.com/wayofdev/laravel-webhook-client/compare/v1.2.19...v1.3.0) (2024-03-04)
 
 
