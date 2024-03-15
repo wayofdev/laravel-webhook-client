@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.8](https://github.com/wayofdev/laravel-webhook-client/compare/v1.3.7...v1.3.8) (2024-03-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency laravel/framework to v10.48.3 ([2a2a851](https://github.com/wayofdev/laravel-webhook-client/commit/2a2a851c154d57901c8ff55bc4914fcba59971b5))
+
 ## [1.3.7](https://github.com/wayofdev/laravel-webhook-client/compare/v1.3.6...v1.3.7) (2024-03-13)
 
 
