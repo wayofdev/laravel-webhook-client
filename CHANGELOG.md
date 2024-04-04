@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.18](https://github.com/wayofdev/laravel-webhook-client/compare/v1.3.17...v1.3.18) (2024-04-04)
+
+
+### Bug Fixes
+
+* **deps:** update dependency cycle/database to v2.10.0 ([6805e09](https://github.com/wayofdev/laravel-webhook-client/commit/6805e09c64c2caf07923400b1da831d95d064ebc))
+
 ## [1.3.17](https://github.com/wayofdev/laravel-webhook-client/compare/v1.3.16...v1.3.17) (2024-03-27)
 
 
