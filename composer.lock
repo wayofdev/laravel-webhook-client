@@ -6045,16 +6045,16 @@
         },
         {
             "name": "wayofdev/laravel-cycle-orm-adapter",
-            "version": "v4.11.4",
+            "version": "4.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wayofdev/laravel-cycle-orm-adapter.git",
-                "reference": "7b8d6818369994e7d363b484b2f5d0b4469002f6"
+                "reference": "253cb43a29ea6d70e8f65368cdfd5b407ac3bcaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wayofdev/laravel-cycle-orm-adapter/zipball/7b8d6818369994e7d363b484b2f5d0b4469002f6",
-                "reference": "7b8d6818369994e7d363b484b2f5d0b4469002f6",
+                "url": "https://api.github.com/repos/wayofdev/laravel-cycle-orm-adapter/zipball/253cb43a29ea6d70e8f65368cdfd5b407ac3bcaf",
+                "reference": "253cb43a29ea6d70e8f65368cdfd5b407ac3bcaf",
                 "shasum": ""
             },
             "require": {
@@ -6068,11 +6068,12 @@
                 "cycle/schema-migrations-generator": "^2.2",
                 "cycle/schema-renderer": "^1.2",
                 "ext-pdo": "*",
-                "illuminate/console": "^10.28 || ^11.0",
-                "illuminate/contracts": "^10.28 || ^11.0",
-                "illuminate/support": "^10.28 || ^11.0",
+                "laravel/framework": "^10.28 || ^11.0",
                 "php": "^8.2",
+                "psr/log": "^3.0",
                 "spiral/attributes": "^3.1",
+                "spiral/core": "^3.12",
+                "spiral/tokenizer": "^3.12",
                 "symfony/console": "^6.4 || ^7.0"
             },
             "require-dev": {
@@ -6093,19 +6094,23 @@
                 "roave/security-advisories": "dev-latest",
                 "wayofdev/cs-fixer-config": "^1.2"
             },
+            "suggest": {
+                "wayofdev/laravel-cycle-orm-factories": "Cycle-ORM Entity Factories and Database Seeders for Laravel",
+                "wayofdev/laravel-paginator": "Custom Laravel Paginator for Cycle-ORM implementing RFC 5988"
+            },
             "type": "library",
             "extra": {
-                "laravel": {
-                    "providers": [
-                        "WayOfDev\\Cycle\\Bridge\\Laravel\\Providers\\CycleServiceProvider"
-                    ],
-                    "aliases": {
-                        "Package": "Cycle"
-                    }
-                },
                 "composer-normalize": {
                     "indent-size": 4,
                     "indent-style": "space"
+                },
+                "laravel": {
+                    "aliases": {
+                        "Package": "Cycle"
+                    },
+                    "providers": [
+                        "WayOfDev\\Cycle\\Bridge\\Laravel\\Providers\\CycleServiceProvider"
+                    ]
                 }
             },
             "autoload": {
@@ -6123,19 +6128,40 @@
                     "email": "the@wayof.dev"
                 }
             ],
-            "description": "PHP package template with GitHub Actions",
-            "homepage": "https://wayof.dev",
+            "description": "🔥 A Laravel adapter for CycleORM, providing seamless integration of the Cycle DataMapper ORM for advanced database handling and object mapping in PHP applications.",
+            "homepage": "https://laravel-cycle-orm-adapter.wayof.dev",
+            "keywords": [
+                "cycle",
+                "cycle-orm",
+                "cycleorm",
+                "data-mapper",
+                "database",
+                "eloquent",
+                "eloquent-alternative",
+                "laravel",
+                "laravel-cycle-orm",
+                "laravel-orm",
+                "mapper",
+                "object-mapping",
+                "orm",
+                "php",
+                "php8",
+                "query-builder",
+                "wayofdev"
+            ],
             "support": {
+                "chat": "https://discord.gg/CE3TcCC5vr",
+                "docs": "https://laravel-cycle-orm-adapter.wayof.dev",
                 "issues": "https://github.com/wayofdev/laravel-cycle-orm-adapter/issues",
                 "source": "https://github.com/wayofdev/laravel-cycle-orm-adapter"
             },
             "funding": [
                 {
-                    "url": "https://github.com/wayofdev",
+                    "url": "https://github.com/sponsors/wayofdev",
                     "type": "github"
                 }
             ],
-            "time": "2024-04-11T23:43:59+00:00"
+            "time": "2024-04-22T02:06:53+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -7292,16 +7318,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.53.0",
+            "version": "v3.54.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer.git",
-                "reference": "69a19093a9ded8d1baac62ed6c009b8bc148d008"
+                "reference": "2aecbc8640d7906c38777b3dcab6f4ca79004d08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/69a19093a9ded8d1baac62ed6c009b8bc148d008",
-                "reference": "69a19093a9ded8d1baac62ed6c009b8bc148d008",
+                "url": "https://api.github.com/repos/PHP-CS-Fixer/PHP-CS-Fixer/zipball/2aecbc8640d7906c38777b3dcab6f4ca79004d08",
+                "reference": "2aecbc8640d7906c38777b3dcab6f4ca79004d08",
                 "shasum": ""
             },
             "require": {
@@ -7373,7 +7399,7 @@
             ],
             "support": {
                 "issues": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/issues",
-                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.53.0"
+                "source": "https://github.com/PHP-CS-Fixer/PHP-CS-Fixer/tree/v3.54.0"
             },
             "funding": [
                 {
@@ -7381,7 +7407,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-04-08T15:03:00+00:00"
+            "time": "2024-04-17T08:12:13+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -8407,16 +8433,16 @@
         },
         {
             "name": "orchestra/testbench-core",
-            "version": "v8.23.9",
+            "version": "v8.23.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench-core.git",
-                "reference": "f2b776cf11e821b14dcadae36099ce17ef37f11e"
+                "reference": "0b4bf76d9ab2b5d6f3a7d9a956e5affbd04bbe4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/f2b776cf11e821b14dcadae36099ce17ef37f11e",
-                "reference": "f2b776cf11e821b14dcadae36099ce17ef37f11e",
+                "url": "https://api.github.com/repos/orchestral/testbench-core/zipball/0b4bf76d9ab2b5d6f3a7d9a956e5affbd04bbe4d",
+                "reference": "0b4bf76d9ab2b5d6f3a7d9a956e5affbd04bbe4d",
                 "shasum": ""
             },
             "require": {
@@ -8495,7 +8521,7 @@
                 "issues": "https://github.com/orchestral/testbench/issues",
                 "source": "https://github.com/orchestral/testbench-core"
             },
-            "time": "2024-04-16T07:33:55+00:00"
+            "time": "2024-04-21T08:00:04+00:00"
         },
         {
             "name": "orchestra/workbench",
@@ -10340,12 +10366,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "1b43da6199cab7867f06b52454a256efa743f170"
+                "reference": "a6fb2a760c95f45ccb6a412599770061c330c624"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/1b43da6199cab7867f06b52454a256efa743f170",
-                "reference": "1b43da6199cab7867f06b52454a256efa743f170",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/a6fb2a760c95f45ccb6a412599770061c330c624",
+                "reference": "a6fb2a760c95f45ccb6a412599770061c330c624",
                 "shasum": ""
             },
             "conflict": {
@@ -10499,7 +10525,7 @@
                 "ezsystems/ezplatform-solr-search-engine": ">=1.7,<1.7.12|>=2,<2.0.2|>=3.3,<3.3.15",
                 "ezsystems/ezplatform-user": ">=1,<1.0.1",
                 "ezsystems/ezpublish-kernel": "<6.13.8.2-dev|>=7,<7.5.31",
-                "ezsystems/ezpublish-legacy": "<=2017.12.7.3|>=2018.6,<=2019.03.5.1",
+                "ezsystems/ezpublish-legacy": "<=2017.12.7.3|>=2018.06,<=2019.03.5.1",
                 "ezsystems/platform-ui-assets-bundle": ">=4.2,<4.2.3",
                 "ezsystems/repository-forms": ">=2.3,<2.3.2.1-dev|>=2.5,<2.5.15",
                 "ezyang/htmlpurifier": "<4.1.1",
@@ -10530,7 +10556,8 @@
                 "friendsofsymfony/oauth2-php": "<1.3",
                 "friendsofsymfony/rest-bundle": ">=1.2,<1.2.2",
                 "friendsofsymfony/user-bundle": ">=1.2,<1.3.5",
-                "friendsofsymfony1/symfony1": ">=1.1,<1.5.19",
+                "friendsofsymfony1/swiftmailer": ">=4,<5.4.13|>=6,<6.2.5",
+                "friendsofsymfony1/symfony1": ">=1.1,<1.15.19",
                 "friendsoftypo3/mediace": ">=7.6.2,<7.6.5",
                 "friendsoftypo3/openid": ">=4.5,<4.5.31|>=4.7,<4.7.16|>=6,<6.0.11|>=6.1,<6.1.6",
                 "froala/wysiwyg-editor": "<3.2.7|>=4.0.1,<=4.1.3",
@@ -10866,7 +10893,7 @@
                 "sumocoders/framework-user-bundle": "<1.4",
                 "superbig/craft-audit": "<3.0.2",
                 "swag/paypal": "<5.4.4",
-                "swiftmailer/swiftmailer": ">=4,<5.4.5",
+                "swiftmailer/swiftmailer": ">=4,<6.2.5",
                 "swiftyedit/swiftyedit": "<1.2",
                 "sylius/admin-bundle": ">=1,<1.0.17|>=1.1,<1.1.9|>=1.2,<1.2.2",
                 "sylius/grid": ">=1,<1.1.19|>=1.2,<1.2.18|>=1.3,<1.3.13|>=1.4,<1.4.5|>=1.5,<1.5.1",
@@ -10916,7 +10943,7 @@
                 "t3s/content-consent": "<1.0.3|>=2,<2.0.2",
                 "tastyigniter/tastyigniter": "<3.3",
                 "tcg/voyager": "<=1.4",
-                "tecnickcom/tcpdf": "<6.2.22",
+                "tecnickcom/tcpdf": "<=6.7.4",
                 "terminal42/contao-tablelookupwizard": "<3.3.5",
                 "thelia/backoffice-default-template": ">=2.1,<2.1.2",
                 "thelia/thelia": ">=2.1,<2.1.3",
@@ -10924,7 +10951,7 @@
                 "thinkcmf/thinkcmf": "<=5.1.7",
                 "thorsten/phpmyfaq": "<3.2.2",
                 "tikiwiki/tiki-manager": "<=17.1",
-                "timber/timber": "<=2",
+                "timber/timber": ">=0.16.6,<1.23.1|>=1.24,<1.24.1|>=2,<2.1",
                 "tinymce/tinymce": "<7",
                 "tinymighty/wiki-seo": "<1.2.2",
                 "titon/framework": "<9.9.99",
@@ -11080,7 +11107,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-04-12T22:04:12+00:00"
+            "time": "2024-04-19T20:04:33+00:00"
         },
         {
             "name": "sebastian/cli-parser",
